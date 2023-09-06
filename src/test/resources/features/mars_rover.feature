@@ -13,7 +13,7 @@ Then the Mars Rover's position should be (1, 2) and facing "North"
 Scenario: Move the Rover forward
 Given the Mars Rover is at position (0, 0) facing "North"
 When I move the Mars Rover forward
-Then the Mars Rover should be at position (0, 1) facing "North"
+Then the Mars Rover's position should be (0, 1) and facing "North"
 
 @Test-b2
 Scenario: Move the Rover backward
@@ -25,4 +25,5 @@ Then the Mars Rover should be at position (0, -1) facing "South"
 Scenario: Move the Rover based on the given problem scenario
 Given the Mars Rover is at position (1, 2) facing "North"
 When I follow the given scenario "LMLMLMLMM"
-Then the Mars Rover should be at position (1, 3) facing "North"
+Then the Mars Rover's position should be (1, 3) and facing "North"
+

@@ -18,6 +18,29 @@ public class Rover {
         this.facing = facing;
     }
 
+    public void setPosition(Integer x, Integer y, String facing) {
+        this.x = x;
+        this.y = y;
+        this.facing = getDirection(facing);
+    }
+
+    public Integer getDirection(String arg){
+
+        if ( "North".equals(arg)) {
+            return N;
+        } else if ( "South".equals(arg)) {
+            return S;
+        } else if ( "East".equals(arg)) {
+            return E;
+        } else if ( "West".equals(arg)) {
+            return W;
+        }else {
+            throw new IllegalArgumentException("incorrect Direction");
+        }
+
+    }
+
+
     public void printPosition() {
         char dir = 'N';
         if (facing == 1) {
