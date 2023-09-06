@@ -40,13 +40,14 @@ public class MarsRoverStepDefs {
 
     @Then("^the Mars Rover should be at position \\((\\d+), -(\\d+)\\) facing \"([^\"]*)\"$")
     public void theMarsRoverShouldBeAtPositionFacing(int arg0, int arg1, String arg2) throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+        marsRover.printPosition();
+        assertEquals(marsRover.x.intValue(), arg0);
+        assertEquals(marsRover.y.intValue(), -(arg1));
+        assertEquals(marsRover.facing, marsRover.getDirection(arg2).intValue());
     }
 
     @When("^I follow the given scenario \"([^\"]*)\"$")
     public void iFollowTheGivenScenario(String arg0) throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+        marsRover.process(arg0);
     }
 }
